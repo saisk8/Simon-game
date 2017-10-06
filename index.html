@@ -10,10 +10,24 @@
 
 <body class="body">
 	<div class="container-fluid">
-		<div class="display-section">
-		</div>
 		<h1 class="title">Simon Game</h1>
-		<br><br><br>
+		<div class="conatiner">
+			<div class="row">
+				<div class="col text-center">
+					<div class="btn-group" role="group">
+						<h4>Strict mode:</h4>
+						<pre><h4 id="strict-text"> On / Off</h4></pre>
+					</div>
+				</div>
+				<div class="col text-center">
+					<div class="btn-group" role="button">
+						<h4>Stage:</h4>
+						<pre><h4 id="level"> 0</h4></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
 		<div class="container">
 			<div class="row pad">
 				<div class="col">
@@ -36,6 +50,11 @@
 					<div class="circle yellow">
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="conatiner">
+			<div class="text-center pad">
+				<button type="button" id="reset" class="btn btn-outline-danger btn-lg">Reset</button>
 			</div>
 		</div>
 	</div>

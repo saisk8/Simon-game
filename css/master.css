@@ -1,11 +1,13 @@
 .body {
 		background-color: #071013;
 		font-family: 'Muli', sans-serif;
+		color: #FFFFFF;
 }
 
 .title {
 		text-align: center;
 		color: #FFFFFF;
+		padding: 20px;
 }
 
 .circle {
@@ -50,5 +52,5 @@
 }
 
 .pad {
-		padding: 40px;
+		padding: 35px;
 }
