@@ -1,10 +1,11 @@
 .body {
-		background-color: #001010;
+		background-color: #071013;
+		font-family: 'Muli', sans-serif;
 }
 
 .title {
 		text-align: center;
-		color: yellow;
+		color: #FFFFFF;
 }
 
 .circle {
@@ -17,5 +18,37 @@
 }
 
 .red {
-		border-color: red;
+		border-color: #F21B3F;
+}
+
+.red:active {
+		background-color: #F21B3F;
+}
+
+.blue {
+		border-color: #08BDBD;
+}
+
+.blue:active {
+		background-color: #08BDBD;
+}
+
+.green {
+		border-color: #29BF12;
+}
+
+.green:active {
+		background-color: #29BF12;
+}
+
+.yellow {
+		border-color: #FF9914;
+}
+
+.yellow:active {
+		background-color: #FF9914;
+}
+
+.pad {
+		padding: 40px;
 }
