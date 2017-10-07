@@ -25,6 +25,7 @@
 
 .red:active {
 		background-color: #F21B3F;
+		cursor: pointer;
 }
 
 .blue {
@@ -33,6 +34,7 @@
 
 .blue:active {
 		background-color: #08BDBD;
+		cursor: pointer;
 }
 
 .green {
@@ -41,6 +43,7 @@
 
 .green:active {
 		background-color: #29BF12;
+		cursor: pointer;
 }
 
 .yellow {
@@ -49,8 +52,17 @@
 
 .yellow:active {
 		background-color: #FF9914;
+		cursor: pointer;
 }
 
 .pad {
 		padding: 35px;
+}
+
+.reset-text {
+		color: #F21B3F;
+}
+
+.reset-text:hover {
+		cursor: pointer;
 }

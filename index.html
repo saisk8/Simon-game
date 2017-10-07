@@ -4,8 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Simon Game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="./css/master.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
 </head>
 
 <body class="body">
@@ -20,6 +22,11 @@
 					</div>
 				</div>
 				<div class="col text-center">
+					<div class="btn-group" role="group">
+						<h4 id="start">Start</h4>
+					</div>
+				</div>
+				<div class="col text-center">
 					<div class="btn-group" role="button">
 						<h4>Stage:</h4>
 						<pre><h4 id="level"> 0</h4></pre>
@@ -31,36 +38,37 @@
 		<div class="container">
 			<div class="row pad">
 				<div class="col">
-					<div class="circle blue">
+					<div id="blue" class="circle blue">
 					</div>
 				</div>
 			</div>
 			<div class="row pad">
 				<div class="col">
-					<div class="circle  red">
+					<div id="red" class="circle red">
 					</div>
 				</div>
 				<div class="col">
-					<div class="circle green">
+					<div id="green" class="circle green">
 					</div>
 				</div>
 			</div>
 			<div class="row pad">
 				<div class="col">
-					<div class="circle yellow">
+					<div id="yellow" class="circle yellow">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="conatiner">
 			<div class="text-center pad">
-				<button type="button" id="reset" class="btn btn-outline-danger btn-lg">Reset</button>
+				<h4 class="reset-text">Reset</h4>
 			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="./js/app.js" charset="utf-8"></script>
 </body>
 
 </html>
