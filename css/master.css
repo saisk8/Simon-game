@@ -66,3 +66,23 @@
 .reset-text:hover {
 		cursor: pointer;
 }
+
+#start {
+		cursor: pointer;
+}
+
+.hover-yellow {
+		background-color: #FF9914;
+}
+
+.hover-red {
+		background-color: #F21B3F;
+}
+
+.hover-green {
+		background-color: #29BF12;
+}
+
+.hover-blue {
+		background-color: #08BDBD;
+}
