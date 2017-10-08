@@ -34,7 +34,7 @@ function simonSays() {
 		if (i >= simon.length) {
 			clearInterval(id);
 		}
-	}, 600);
+	}, 700);
 	player = [];
 }
 
@@ -46,11 +46,11 @@ function play(s) {
 	setTimeout(function() {
 		$("#" + s)
 			.removeClass("hover-" + s);
-	}, 300);
+	}, 200);
 }
 
 function checkMove(id) {
-	if (player[player.length - 1] !== simon[player.length - 1]) {
+	if (wrongMove()) {
 		if (game.strict) {
 			alert("Start again");
 			startGame();
@@ -60,7 +60,7 @@ function checkMove(id) {
 		}
 	} else {
 		play(id);
-		if (simon.length === player.length) {
+		if (checklevelComplete()) {
 			if (checkWin()) {
 				alert("You have won!");
 			} else {
@@ -77,4 +77,12 @@ function addPlayerMove(id) { //eslint-disable-line
 
 function checkWin() {
 	return (player.length === 20);
+}
+
+function checklevelComplete() {
+	return simon.length === player.length;
+}
+
+function wrongMove() {
+	return player[player.length - 1] !== simon[player.length - 1];
 }
