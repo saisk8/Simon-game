@@ -14,86 +14,67 @@ var simon = [];
 var player = [];
 
 function startGame() {
-	game.level += 1;
 	simon = [];
 	player = [];
 	addMove();
-	addEventListeners();
 }
 
 function addMove() {
+	game.level += 1;
 	var move = Math.floor(Math.random() * 4);
 	simon.push(game.buttons[move]);
 	simonSays();
 }
 
 function simonSays() {
-	for (var i = 0; i < simon.length; i++) {
-		$("#" + simon[i])
-			.addClass("hover-" + simon[i]);
-		setTimeout(1000, playAudio(simon[i]));
-	}
+	var i = 0;
+	var id = setInterval(function() {
+		play(simon[i]);
+		i++;
+		if (i >= simon.length) {
+			clearInterval(id);
+		}
+	}, 600);
+	player = [];
 }
 
-function playAudio(s) {
+function play(s) {
 	var audio = new Audio(game.sounds[s]);
-	audio.play();
 	$("#" + s)
-		.removeClass("hover-" + s);
+		.addClass("hover-" + s);
+	audio.play();
+	setTimeout(function() {
+		$("#" + s)
+			.removeClass("hover-" + s);
+	}, 300);
 }
 
-function checkMoves() {
-	for (var i = 0; i < player.length; i++) {
-		if (player[i] !== simon[i]) {
-			return false;
-		}
-	}
-	return true;
-}
-
-function addEventListeners() {
-	document.getElementById("red")
-		.addEventListener("click", addPlayerMove);
-	document.getElementById("blue")
-		.addEventListener("click", addPlayerMove);
-	document.getElementById("green")
-		.addEventListener("click", addPlayerMove);
-	document.getElementById("yellow")
-		.addEventListener("click", addPlayerMove);
-}
-
-function addPlayerMove(e) {
-	player.push(e.target.id);
-	if (checkMoves()) {
-		if (checkWin()) {
-			alert("You have Won!");
-			reset();
-		} else {
-			addMove();
-		}
-	} else {
+function checkMove(id) {
+	if (player[player.length - 1] !== simon[player.length - 1]) {
 		if (game.strict) {
-			alert("Too bad, try again!");
-			reset();
+			alert("Start again");
+			startGame();
 		} else {
+			alert("Wrong move");
 			simonSays();
 		}
+	} else {
+		play(id);
+		if (simon.length === player.length) {
+			if (checkWin()) {
+				alert("You have won!");
+			} else {
+				addMove();
+			}
+		}
 	}
+}
+
+function addPlayerMove(id) { //eslint-disable-line
+	player.push(id);
+	checkMove(id);
 }
 
 function checkWin() {
 	return (player.length === 20);
-}
-
-function reset() {
-	document.getElementById("red")
-		.removeEventListner("click", addPlayerMove);
-	document.getElementById("blue")
-		.removeEventListner("click", addPlayerMove);
-	document.getElementById("green")
-		.removeEventListner("click", addPlayerMove);
-	document.getElementById("yellow")
-		.removeEventListner("click", addPlayerMove);
-	game.level = 0;
-	startGame();
 }
