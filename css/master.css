@@ -59,16 +59,18 @@
 		padding: 35px;
 }
 
-.reset-text {
+.reset {
 		color: #F21B3F;
-}
-
-.reset-text:hover {
 		cursor: pointer;
 }
 
-#start {
+.reset:hover {
 		cursor: pointer;
+}
+
+.start {
+		cursor: pointer;
+		color: #00FF00;
 }
 
 .hover-yellow {
