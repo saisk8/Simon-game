@@ -16,6 +16,7 @@ var player = [];
 function startGame() {
 	simon = [];
 	player = [];
+	game.level = 0;
 	addMove();
 }
 
@@ -24,6 +25,8 @@ function addMove() {
 	var move = Math.floor(Math.random() * 4);
 	simon.push(game.buttons[move]);
 	simonSays();
+	$("#level")
+		.html("<h4> Stage: " + game.level + "</h4>");
 }
 
 function simonSays() {
@@ -80,9 +83,14 @@ function checkWin() {
 }
 
 function checklevelComplete() {
-	return simon.length === player.length;
+	return (simon.length === player.length);
 }
 
 function wrongMove() {
-	return player[player.length - 1] !== simon[player.length - 1];
+	return (player[player.length - 1] !== simon[player.length - 1]);
+}
+
+function toggleStrict() { //eslint-disable-line (no-unused-vars)
+	game.strict = !game.strict;
+	return game.strict;
 }
