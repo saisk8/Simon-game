@@ -88,3 +88,7 @@
 .hover-blue {
 		background-color: #08BDBD;
 }
+
+.hide {
+		display: none;
+}

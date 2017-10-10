@@ -94,3 +94,7 @@ function toggleStrict() { //eslint-disable-line (no-unused-vars)
 	game.strict = !game.strict;
 	return game.strict;
 }
+
+function reset() { //eslint-disable-line (no-unused-vars)
+	game.level = 0;
+}

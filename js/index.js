@@ -3,10 +3,21 @@ $(document)
 		$("#start")
 			.click(function() {
 				startGame(); //eslint-disable-line (no-undef)
+				$("#start")
+					.addClass("hide");
+				$("#reset")
+					.removeClass("hide");
 			});
 		$("#reset")
 			.click(function() {
-				startGame(); //eslint-disable-line (no-undef)
+				reset(); //eslint-disable-line (no-undef)
+				$("#reset")
+					.addClass("hide");
+				$("#start")
+					.removeClass("hide");
+				$("#level")
+					.html("<h4> Stage: " + game.level + "</h4>"); //eslint-disable-line (no-undef)
+
 			});
 
 		$("#red")
